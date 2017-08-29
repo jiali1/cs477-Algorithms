@@ -1,0 +1,32 @@
+#include <iostream> 
+
+using namespace std; 
+
+int findPeakEntry( int array[], int start, int size ); 
+
+int main( )
+{
+   int peak = 0; 
+   int array[10] = {1, 3, 4, 5, 6, 7, 8, 5, 2, 1};
+  
+   peak = findPeakEntry( array, 0, 9 ); 
+   cout << "peak: " << peak + 1 << endl;
+    return 0;
+}
+
+int findPeakEntry( int array[], int start, int size )
+{
+   int n = (start + size) / 2; 
+   if( ( array[n-1] < array[n] ) && ( array[n-1] < array[ n + 1] ) )
+   {
+      findPeakEntry( array, n + 1, size  ); 
+   }
+   else if( ( array[n-1] > array[n] ) && ( array[n-1] > array[(n) + 1] ) )
+   { 
+      findPeakEntry( array, start, n - 1  ); 
+   }
+   else
+   {
+      return n; 
+   }
+}

@@ -1,0 +1,9 @@
+Implemention of a modified bubble sort that alternates left-to-right and right-to-left
+passes through the data. For example, if sorting the array [6, 5, 2, 8, 3, 1], the first
+left-to-right pass will swap elements that are out of order and get the result: [5, 2, 6, 3, 1,
+8]. The right-to-left pass begins at element 1 (on position 5) and goes all the way to the
+beginning of the array. At the end of this pass we have [1, 5, 2, 6, 3, 8]. The next phase 
+works only on the segment [5, 2, 6, 3] as elements 1 and 8 have already been placed at
+their final location.
+The algorithm will sort the following array: “EASYQUESTION”. It will also print the status
+of the array at the end of each left-to-right and right-to-left pass.
